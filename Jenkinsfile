@@ -11,7 +11,7 @@ node {
     }
   }
   stage('deploy') {
-           withCredentials((usernamePassword(credentialsId: "dockerhub", passwordVariable: "dockerKey", usernameVariable: "dockerUser"))){
+    withCredentials([usernamePassword(credentialsId: "dockerhub", passwordVariable: "dockerKey", usernameVariable: "dockerUser")]){
              sh "docker login username dockerUser password dockerKey"
            }
     
