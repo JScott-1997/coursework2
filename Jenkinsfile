@@ -17,7 +17,7 @@ node {
     
     app.push("latest")
     
-    sshagent(credentials : ['Build_Server']) {
+    sshagent(credentials : ['Production_Server']) {
       sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-52-23-230-199.compute-1.amazonaws.com 'kubectl set image deployments/coursework2 coursework2=jscott1997/coursework2'"
     }
   }
