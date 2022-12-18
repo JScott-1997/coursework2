@@ -7,7 +7,7 @@ node {
   }
   stage('test') {
     app.inside{
-      sh echo "Passed the Test"
+      sh 'echo "Passed the Test"'
     }
   }
   stage('deploy') {
