@@ -12,7 +12,7 @@ node {
   }
   stage('deploy') {
     withCredentials([usernamePassword(credentialsId: "dockerhub", passwordVariable: "dockerKey", usernameVariable: "dockerUser")]){
-             sh "docker login username dockerUser password dockerKey"
+             sh "docker login --username $dockerUser --password $dockerKey"
            }
     
     app.push("${env.BUILD_NUMBER}")
