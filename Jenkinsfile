@@ -1,7 +1,7 @@
 node {
   stage('Build') {
           //Pull Repo
-          git branch 'main', credentialsId: 'Coursework2', url: 'https://github.com/JScott-1997/coursework2'
+          git branch: 'main', credentialsId: 'Coursework2', url: 'https://github.com/JScott-1997/coursework2'
           //Build Docker Image
           app = docker.build("jscott1997/coursework2") 
   }
