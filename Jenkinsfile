@@ -17,5 +17,9 @@ node {
     
     app.push("${env.BUILD_NUMBER}")
     app.push("latest")
+    
+    sshagent(credentials : ['Build_Server']) {
+      sh "ssh -u StrictHostKeyChecking=no ubuntu@ec2-3-85-173-16.compute-1.amazonaws.com 'kubectl set image deployments/coursework2 jscott1997/coursework2'
+    }
   }
 }
